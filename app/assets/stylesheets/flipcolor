@@ -1,0 +1,5 @@
+#!/bin/bash
+sed -e "s/lighten/_LIGHTEN_/g" $1 > tmp
+sed -e "s/darken/lighten/g"    tmp > tmp2
+sed -e "s/_LIGHTEN_/darken/g"  tmp2 > $1
+git diff $1
