@@ -103,7 +103,7 @@
         background: $color3;
 
         &:hover {
-          background: lighten($color3, 8%);
+          background: darken($color3, 8%);
         }
       }
     }
@@ -178,7 +178,7 @@
         background: $color3;
 
         &:hover {
-          background: lighten($color3, 8%);
+          background: darken($color3, 8%);
         }
       }
     }
@@ -305,7 +305,7 @@
     z-index: 2;
 
     &:hover {
-      background: darken($color3, 5%);
+      background: lighten($color3, 5%);
     }
 
     span {

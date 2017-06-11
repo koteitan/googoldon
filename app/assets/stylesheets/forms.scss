@@ -63,7 +63,7 @@ code {
     margin-bottom: 5px;
     font-family: inherit;
     font-size: 14px;
-    color: white;
+    color: $color5;
     display: block;
     width: auto;
   }
@@ -74,7 +74,7 @@ code {
     label {
       font-family: inherit;
       font-size: 14px;
-      color: white;
+      color: $color5;
       display: block;
       width: auto;
     }
@@ -171,24 +171,24 @@ code {
     margin-bottom: 10px;
 
     &:hover {
-      background-color: lighten($color4, 5%);
+      background-color: darken($color4, 5%);
     }
 
     &:active, &:focus {
       position: relative;
       top: 1px;
-      background-color: darken($color4, 5%);
+      background-color: lighten($color4, 5%);
     }
 
     &.negative {
       background: $color6;
 
       &:hover {
-        background-color: lighten($color6, 5%);
+        background-color: darken($color6, 5%);
       }
 
       &:active, &:focus {
-        background-color: darken($color6, 5%);
+        background-color: lighten($color6, 5%);
       }
     }
   }
