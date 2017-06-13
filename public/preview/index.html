@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>preview local timeline</title>
+<meta charset="UTF-8" />
+<style type="text/css"><!--
+  td{color:#333355;}
+  a {color:#888899;}
+  td{line-height:1.2;font-size:90%}
+  td{border-bottom-style:solid;
+     border-bottom-width:3px;
+     border-bottom-color:whitesmoke}
+  a:-webkit-any-link{cursor:auto;}
+//--></style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  },
+  CommonHTML: { matchFontHeight: false }
+});
+</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+</head>
+<body>
+<table id="output"></table>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+var url = 'https://googoldon.net/api/v1/timelines/public?local="true"';
+$(function(){
+  $.getJSON(url, {}, function(json){
+    var outstr="";
+    for(var i=0;i<json.length;i++){
+      outstr+="<tr><td style=vertical-align:top>";
+      outstr+="\t<img src=\""+json[i].account.avatar+"\" width=32pt />";
+      outstr+="</td><td>\n";
+      outstr+=json[i].account.display_name+" ";
+      outstr+="<a href="+json[i].account.url+"\">"+json[i].account.acct+"</a><br>\n"; 
+      outstr+=json[i].content+"\n</td></tr>\n";
+    }
+    $("#output").append(outstr);
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub,"output"]);
+  });
+});
+</script>
+</body>
+</html>
